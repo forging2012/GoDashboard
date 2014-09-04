@@ -1,0 +1,1702 @@
+/*
+ * Module.css
+ * All specific styles that relate to a view page or partial should occur here.  All styles should be namespaced by atlest the style you want to alter,
+ * and it's partial's wrapping classname.  In the event the class you want to apply has no parent with a specific class name, default to the page's specific
+ * body id name
+ *
+ * Measurements should all be in "em" unless it is a border.
+ * 1em = 12px
+ *
+ * Quick guide to conversions:
+ *      1px = .0833em
+ *      2px = .1666em
+ *      4px = .25em
+ *      5px = .4166em
+ *      6px = .5em
+ *      10px = .8333em
+ *      11px = .9166em
+ *      12px = 1em
+ *      14px = 1.1666em
+ *      16px = 1.3333em
+ *      18px = 1.25em
+ */
+
+
+
+
+/*
+ * Pipeline visualization
+ */
+#pipeline_visualization{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#pipeline_visualization h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+#pipeline_visualization .upstream {
+    float: left;
+    width: 30%;
+    position: relative;
+}
+#pipeline_visualization .current {
+    float: left;
+    width: 30%;
+    position: relative;
+}
+#pipeline_visualization .downstream {
+    width: 30%;
+    position: relative;
+    float: left;
+}
+#pipeline_visualization .pipeline {
+    width: 50%;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    margin-bottom: 1em;
+    padding: 5px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    min-height: 68px;
+
+}
+#pipeline_visualization .line,
+#pipeline_visualization .vertical_line{
+    background-color: #CCC;
+}
+
+#pipeline_visualization .pipeline .title,
+#pipeline_visualization .pipeline .name {
+    font-size: 12px;
+    padding: 5px;
+}
+
+#pipeline_visualization .pipeline .content .material {
+    font-size: 12px;
+}
+
+
+#pipeline_visualization .pipeline .content{
+    padding: 6px;
+    display: block;
+}
+#pipeline_visualization .pipeline .content div{
+    word-wrap: break-word;
+}
+#pipeline_visualization .pipeline_instance,
+#pipeline_visualization .pipeline {
+    clear: both;
+    padding: 5px;
+    overflow: hidden;
+
+}
+
+
+#pipeline_visualization .stage_bar {
+margin-top: 0;
+}
+
+
+#pipeline_visualization .pipeline_instance a,
+#pipeline_visualization .pipeline .content a {
+
+}
+
+#pipeline_visualization .pipeline_instance .stages,
+#pipeline_visualization .pipeline .stages {
+    clear: left;
+}
+#pipeline_visualization .pipeline .content form {
+    margin-top: 2em;
+}
+
+#pipeline_visualization .upstream .pipeline,
+#pipeline_visualization .downstream .pipeline {
+    background-color: #EEE;
+    -moz-box-shadow: inset 0 0 5px #CCC;
+    -webkit-box-shadow: inset 0 0 5px #CCC;
+    box-shadow: inset 0 0 5px #CCC;
+}
+
+#pipeline_visualization .current .pipeline {
+    -moz-box-shadow: 0 0 5px #CCC;
+    -webkit-box-shadow: 0 0 5px #CCC;
+    box-shadow: 0 0 5px #CCC;
+}
+
+#pipeline_visualization .stages .stage {
+    margin-top: 5px;
+}
+
+#pipeline_header .feed {
+    background: url(../images/icon-rss.png?2.1.0) no-repeat;
+    height: 2em;
+    margin-top: 1.65em;
+    padding-right: 2.5em;
+    float: right;
+}
+
+
+/*
+ * Agents
+ */
+#agents .entity_title{
+    float: left;
+}
+#agents .content_wrapper_outer{
+    clear: both;
+}
+.list_aggregation {
+    float: left;
+    font-size: 12px;
+    margin-left: 15px;
+    margin-top: 9px;
+}
+.list_aggregation li {
+    padding: 10px 0 0 10px;
+    margin-right: 1.25em;
+    color: #ccc;
+    display: block;
+    float: left;
+}
+
+
+
+
+/*
+* Agents Form
+*/
+#agents_form input.show_panel {
+    background: url(../images/down_arrow.png?2.1.0) 97% 50% #E4E4E4 no-repeat;
+    padding-right: .6667em;
+    margin-left: 2em;
+}
+
+/*
+ * Edit panel for agents page
+ */
+
+#users_form .edit_panel,
+#agents_form .edit_panel {
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #999;
+    background-image: url(../images/g9/backgrounds/bg_glass_gradient.png?2.1.0);
+    background-repeat: repeat-x;
+    background-position: center center;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 0;
+}
+
+#users_form .enhanced_dropdown,
+#agents_form .enhanced_dropdown{
+    width: 320px;
+}
+
+input.new_role,
+input.new_resource {
+    float: left;
+    margin-left: 10px;
+    width: 120px;
+}
+
+
+#agents_form .edit_panel .new_agent {
+    float: right;
+}
+
+/*
+ * Agents Table
+ */
+.agents_table tr.agent_instance td.location{
+    width: 10%;
+}
+.agents_table tr.agent_instance td.ip_address{
+    max-width: 110px;
+}
+.agents_table tr.agent_instance td.resources,
+.agents_table tr.agent_instance th.resources {
+    width: 20%;
+}
+
+.agents_table tr.agent_instance td.environments,
+.agents_table tr.agent_instance th.environments {
+    width: 20%;
+}
+
+#agents_form .agents_table tr.Building,
+#agents_form .agents_table tr.Building td span{
+    text-align: left;
+}
+
+
+#agents_form .agents_table tr.Building td,
+#agents_form .agents_table tr.Active td,
+#agents_form .agents_table tr.Cancelled td {
+    background-image: none;
+    background-color: #FAE48E;
+}
+
+#agents_form .agents_table tr.Missing td.status,
+#agents_form .agents_table tr.Lost-Contact td.status,
+#agents_form .agents_table tr.Lost-contact td.status,
+#agents_form .agents_table tr.Lostcontact td.status,
+#agents_form .agents_table tr.Lost td.status,
+ {
+    background: url(../images/g9/icons/icon_question_16.png?2.1.0) no-repeat 5px 50%;
+    padding-left: 25px;
+}
+
+/**
+* Pipeline Status Gadget content
+*/
+
+#gadget_content .pipeline {
+    background: #FFF;
+    width:245px;
+    float: left;
+    padding:15px;
+    min-height: 190px;
+    overflow: hidden;
+    margin: 0 10px 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    float:left;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-box-shadow: inset 0 0 5px #ddd;
+    -webkit-box-shadow: inset 0 0 5px #ddd;
+    box-shadow: inset 0 0 5px #ddd;
+    font-size: 11px;
+}
+
+/*
+ * Pipeline Container: contains groups of pipelines, like Pipeline Groups, Environments, etc.
+ */
+#pipeline_groups_container{
+    clear: both;
+}
+.pipeline_bundle{
+    overflow: hidden;
+    min-width: 87.5em;
+}
+
+.pipeline_bundle .divider{
+    width: 1px;
+    height: 10em;
+    float: left;
+}
+.pipeline_bundle .pipeline {
+    background: #FFF;
+    width:245px;
+    float: left;
+    padding:15px;
+    min-height: 190px;
+    overflow: hidden;
+    margin: 0 10px 10px 0;
+    border: 1px solid #ddd;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: inset 0 0 5px #ddd;
+    -webkit-box-shadow: inset 0 0 5px #ddd;
+    box-shadow: inset 0 0 5px #ddd;
+}
+
+
+.pipeline_bundle div.pipeline {
+    background: #fff;
+    float:left;
+}
+
+.pipeline_bundle div.pipeline .pipeline_instance {
+    border-top: 1px dotted #ccc;
+    padding: 10px 0 0 0;
+}
+
+.pipeline_bundle .pipeline .alert{
+    margin: .25em;
+}
+.pipeline_bundle .pipeline .status,
+.pipeline_bundle .pipeline .stages {
+    clear: both;
+}
+
+.pipeline_bundle .pipeline .warn_message {
+    background:url(../images/g9/icons/icon_error_16.png?2.1.0) no-repeat scroll 0 50% transparent;
+    float:right;
+    font-weight:normal;
+    padding: 3px 0 3px 20px;
+    font-size: 11px;
+}
+.pipeline_bundle .pipeline .status .label {
+    font-size:11px;
+    float: left;
+    margin: 5px 10px 0 0;
+}
+.pipeline_bundle .pipeline .status .changes_button_wrapper{
+    padding-top: 4px;
+}
+.pipeline_bundle .pipeline .status .pipeline_instance_details{
+    margin-top: 10px;
+    clear: both;
+}
+.pipeline_bundle .pipeline .previously{
+
+}
+#pipelines .pipeline_bundle .pipeline .previously_wrapper{
+    margin: 10px 0;
+    min-height: 22px;
+}
+*+html #pipelines .pipeline_bundle .pipeline .previously_wrapper{
+    height: 1.5em;
+}
+.pipeline_bundle .pipeline .previously .label{
+    float: left;
+}
+.pipeline_bundle .pipeline .previously a{
+    float: left;
+    margin-left: .25em;
+}
+.pipeline_grouping_wrapper{
+    float: left;
+    min-width: 87.5em;
+}
+*+html .pipeline_grouping_wrapper{
+    width: 87.5em;
+}
+.pipeline_bundle .pipeline_instance .changes_button_wrapper button{
+    top: -.1666em;
+}
+#pipelines .pipeline_bundle .operate,
+.pipeline .operate {
+    float: left;
+}
+.pipeline_bundle .pipeline_operations {
+    clear: both;
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #CCC;
+
+}
+/*
+.pipeline_bundle .pipeline_operations .trigger_with_options_wrapper button {
+    border-right: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+}
+.pipeline_bundle .pipeline_operations .pause_wrapper button,
+.pipeline_bundle .pipeline_operations .unpause_wrapper button{
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    border-right-top-radius: 4px;
+    border-right-bottom-radius: 4px;
+    -moz-box-shadow: 0;
+}
+.pipeline_bundle .pipeline_operations .trigger_wrapper button{
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    border-left-top-radius: 4px;
+    border-left-bottom-radius: 4px;
+    -moz-box-shadow: 0;
+}
+
+*/
+.pipeline_bundle .pause_description{
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.pause_reason input[type=text]{
+    display: block;
+    margin-top: 10px;
+    width: 250px;
+}
+
+/* remove button appearance from the  changes button */
+.pipeline_bundle .pipeline_instance .changes_button_wrapper button, .non_passing_tests .changes_button_wrapper button {
+    border: 0;
+    padding: 3px 0;
+    background: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.pipeline_bundle .pipeline_instance .changes_button_wrapper button span, .non_passing_tests .changes_button_wrapper button span {
+    padding-right: 16px;
+    background: url(../images/g9/icons/arrow_open.png?2.1.0) right no-repeat;
+    text-transform: lowercase;
+    text-transform: capitalize;
+    font-size: 11px !important;
+    color: #1F66BD;
+}
+
+.pipeline_bundle .pipeline_instance .changes_button_wrapper button span:hover {
+    color: #1F66BD;
+}
+
+.non_passing_tests .changes_button_wrapper button.submit:hover span {
+    color: #1F66BD;
+}
+
+.non_passing_tests .changes_button_wrapper button.submit:hover {
+    background: none;
+}
+
+.pipeline_bundle .pipeline_instance .changes_button_wrapper button span img, .non_passing_tests .changes_button_wrapper button span img {
+    display: none;
+}
+
+.checkbox_label_box {
+    padding:15px;
+}
+
+
+/*
+* Environments
+*/
+.show_environment .added_item{
+    float: left;
+    width: 31.5%;
+
+}
+.show_environment .added_item ul {
+    float:none;
+    margin-left: 10px;
+}
+
+.show_environment .added_item li{
+    float:none;
+    list-style: disc;
+    margin-top: 5px;
+    font-size:12px;
+}
+.show_environment h3{
+	text-transform: uppercase;
+    font-weight:bold;
+}
+.show_environment h3 a{
+	text-transform: none;
+}
+
+.show_environment .added_pipelines,
+.show_environment .added_agents{
+	border-right: 1px solid #CCCCCC;
+	margin-right: 1.5%;
+	margin-bottom: 10px;
+	min-height: 100px;
+}
+.show_environment button{
+	background-color: #444;
+	min-width: 0;
+	margin-left: 12px;
+}
+
+.environments {
+    clear: both;
+}
+.environments .unused_feature p {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+.environments .add_new_environment {
+    float:left;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+
+/* define the layout for the env variables rows */
+
+.environment_variables_section input.form_input {
+    margin-right: 5px;
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2) inset;
+    float: left;
+}
+
+.environment_variables_section .equals_sign {
+    margin-right: 10px;
+    margin-left: 4px;
+    float: left;
+    padding-top: 5px;
+}
+
+
+.environment_variables_section .icon_remove {
+		float: left;
+    display: block;
+    height: 18px;
+    width: 18px;
+    background: url(../images/g9/icon_close_16.png?2.1.0) no-repeat 1px 3px;
+    cursor: pointer;
+}
+
+.wizard_error_message {
+    float:left;
+    padding: 4px;
+    color: #990000;
+}
+
+a.add_item {
+    padding: 8px 5px 0 22px;
+    background: url(../images/g9/icon_add_16.png?2.1.0) no-repeat 1px 5px;
+    display: block;
+    width: 80px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #333;
+    font-size:12px;
+    cursor: pointer;
+		clear: both;
+}
+
+
+.environment_variables_section input.environment_variable_name {
+    width:200px;   
+}
+
+.environment_variables_section .link_as_button {
+    float: none;
+}
+
+.environment_variables_section .new_variables {
+    margin-top: .5em;
+    margin-bottom: 15px;
+}
+
+.environment .pipeline .deploy {
+    margin-top: 10px;
+}
+
+.environment .pipeline .deploy form {
+    float: left;
+}
+.environment .pipeline .deployed_revisions form {
+    display: inline;
+}
+
+.environment .pipeline .deployed_revisions {
+    padding-top: 5px;
+    clear: both;
+}
+
+.environment .pipeline div.has_new_materials {
+    background: url(../images/g9/icons/icon_info_16.png?2.1.0) no-repeat 0 3px;
+    padding-left: 20px;
+}
+.environment .pipeline div.has_new_materials table {
+    margin-left: -20px;
+}
+
+#add_new_environment .agents_section .list_table{
+    -moz-box-shadow: 0 0 0 0 transparent;
+}
+
+ 
+.pipeline_selector {
+  padding: 4px 0;
+}
+
+.pipeline_selector label.inline {
+  cursor: pointer;
+}
+
+#pipelines_form .input {
+    margin-bottom:10px;
+    margin-left:14px;
+    margin-top:10px;
+}
+
+.available_pipelines {
+    margin-left:14px;
+}
+
+.unavailable_pipelines label {
+    padding-top: 5px;
+    margin-left: 14px;
+    color: #999;
+}
+
+
+/*
+.environment_variables_section {
+    max-height:27em;
+    margin-top:10px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    width:780px;
+}
+*/
+
+#add_new_environment .environment_name{
+    padding-bottom: 1.2em;
+}
+
+#add_new_environment .environment_name label{
+    font-size:18px;
+    font-weight:300;
+    margin-bottom: 15px;
+}
+#add_new_environment .section_title {
+    font-size:18px;
+    font-weight:300;
+    margin-bottom: 15px;
+}
+
+.environment_variables_section li {
+    padding: 4px 0;
+    clear: left;
+}
+
+
+
+/*
+ Hidereveal
+
+ To implement this ...
+
+*/
+.hidereveal_collapsed .hidereveal_content {
+    display: none;
+}
+.hidereveal_expander {
+    padding-left: 14px;
+    margin: 3px 0;
+    cursor: pointer;
+    background: url(../images/g9/icons/arrow_open.png?2.1.0) 0 50% no-repeat transparent;
+    display: block;
+}
+.hidereveal_collapsed .hidereveal_expander {
+    background: url(../images/g9/icons/arrow_closed.png?2.1.0) 0 50% no-repeat transparent;
+}
+
+a.hidereveal_expander,
+a.hidereveal_collapsed {
+  color: #333;
+}
+
+/*
+ environment material revision section
+*/
+ 
+
+.environment .pipeline .deployed_revisions table.materials {
+    margin-top: 10px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+.environment .pipeline .deployed_revisions .materials th {
+    color: #333;
+    font-weight: normal;
+}
+
+.environment .pipeline .deployed_revisions .materials th,
+.environment .pipeline .deployed_revisions .materials td {
+    padding: 4px 5px;
+    font-size: 10.5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.environment .pipeline .deployed_revisions .materials tr.revision-row td {
+    background-color: #deeef2;
+    border-bottom: 1px solid #b6d7de;
+}
+
+.environment .pipeline .deployed_revisions .materials tr.revision-row td.revision_number {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.environment .pipeline .deployed_revisions .materials th.noshow,
+.environment .pipeline .deployed_revisions .materials td.noshow {
+    display: none;
+}
+
+.environment .pipeline .deployed_revisions .hidereveal_expander{
+    display: inline;
+}
+.environment .pipeline .deployed_revisions .materials td{
+    vertical-align: top;
+}
+
+
+/*
+ * Stage Detail Page
+ */
+
+.page_title_bar .run_results .run,
+.page_title_bar .run_details .schedule_info,
+.page_title_bar .other_runs a
+
+{
+    float: left;
+    margin-right: 1em;
+}
+
+a#show_other_stage_runs {
+    background: url(../images/g9/icons/arrow_open.png?2.1.0) no-repeat right;
+    padding-right: 16px;
+}
+
+.page_title_bar .run_results .result,
+    .page_title_bar .run_details .duration {
+    float: left;
+}
+
+.page_title_bar .color_code {
+    width: 1em;
+    height: 1em;
+    margin-right: .5em;
+    float: left;
+    disply: inline;
+}
+
+.page_title_bar .page_status_bar .enhanced_dropdown{
+    width: auto;
+}
+*+html .page_title_bar .page_status_bar .enhanced_dropdown{
+    width: 13.5em;
+}
+.page_title_bar .other_runs {
+    margin: 10px 10px 5px 10px;
+}
+
+*+html .page_title_bar .other_runs,
+*+html .page_title_bar .other_runs li
+{
+    width: 100%;
+}
+
+.page_title_bar .status ul li {
+    display: block;
+    margin: 0.5em 0;
+}
+
+.page_title_bar .run ul li {
+    display: block;
+    padding-bottom: .5em;
+    clear: left;
+}
+
+/** Test Failures Widget **/
+
+
+.non_passing_tests .block_to_hide_or_reveal_by_above_pipeline_bar {
+    margin-left: 15px;
+    border-left: 5px solid #CCC;
+    padding-left: 15px;
+}
+
+.non_passing_tests h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.non_passing_tests h3 .counts {
+    float: right;
+    font-size: 12px;
+    padding-right: 10px;
+}
+
+.non_passing_tests span.total,
+.non_passing_tests span.failures,
+.non_passing_tests span.errors {
+    padding: 2px 0;
+}
+
+
+.non_passing_tests span.total,
+.non_passing_tests span.failures {
+    margin-right: 5px;
+    padding-right: 10px;
+    border-right: 1px solid #CCC;
+}
+
+
+.non_passing_tests span.failures {
+    background: url(../images/g9/icons/icon_failure_16.png?2.1.0) no-repeat 0 1px;
+    padding-left: 20px;
+}
+
+.non_passing_tests span.errors {
+    background: url(../images/g9/icons/icon_error_16.png?2.1.0) no-repeat 0 1px;
+    padding-left: 20px;
+}
+
+
+.non_passing_tests .failing_pipeline {
+    float: none;
+    margin-bottom: 15px;
+}
+.non_passing_tests .header .title {
+    float: left;
+}
+.non_passing_tests .header .counts {
+    float: right;
+}
+.non_passing_tests .pipeline_bar {
+    background: #CCC url(../images/g9/backgrounds/overlay_gradient_36px.png?2.1.0) repeat-x;
+    padding: 10px;
+    margin-bottom: 10px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+
+}
+
+.non_passing_tests .pipeline_bar,
+.non_passing_tests .pipeline_bar .secondary {
+    color: #333;
+    margin-right: 1em;
+}
+
+.non_passing_tests .pipeline_bar .pipeline_label {
+    font-weight: bold;
+}
+
+.non_passing_tests .pipeline_bar .color_code,
+.non_passing_tests .pipeline_bar .failing_since_label{
+    float: left;
+}
+.non_passing_tests .pipeline_bar .pipeline_details {
+    margin-left: 20px;
+    display: block;
+    margin-top: -2px;
+}
+
+.non_passing_tests .pipeline_bar .secondary {
+    font-size: 12px;
+}
+
+.message .secondary {
+    font-size: 12px !important;
+    margin-left: 5px;
+}
+
+.non_passing_tests .pipeline_bar .counts{
+    float: right;
+}
+
+.non_passing_tests .users {
+    font-size: 12px;
+    margin: 0 0 10px 10px;
+    font-weight: bold;
+}
+
+
+
+.non_passing_tests .test_suite {
+
+}
+
+.non_passing_tests .suite {
+    padding: 10px 0 5px 0;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-top: 1px dotted #CCC;
+}
+
+.non_passing_tests .suite .suite_name {
+    font-weight: normal;
+}
+.non_passing_tests .test_suite .test_case .alt_row{
+    background-color: #A5A5A5;
+}
+.non_passing_tests .test_suite .test_case .test_status {
+
+}
+.non_passing_tests .test_suite .test_case .test_status div {
+    width: 16px;
+    height: 16px;
+    padding: 2px 0 2px 10px;
+}
+
+
+.non_passing_tests .test_suite td {
+    padding: 2px 0;
+}
+
+.non_passing_tests .test_suite .test_case .test_status div.Failure{
+    background: url(../images/g9/icons/icon_failure_16.png?2.1.0) no-repeat 2px 2px;
+
+}
+.non_passing_tests .test_suite .test_case .test_status div.Error{
+    background: url(../images/g9/icons/icon_error_16.png?2.1.0) no-repeat 2px 2px;
+}
+.non_passing_tests ol {
+
+}
+
+/**
+ * Jobs
+ */
+
+.content #tab_container div.jobs {
+    clear: left;
+    float: left;
+    width: 180px;
+    border-right: 1px solid #CCC;
+    padding-bottom: 0 !important;
+    border-bottom: 0 !important;
+}
+
+.content #tab_container .materials_overview_wrapper {
+    margin-left: 200px;
+}
+
+
+
+
+.overview_widget .job_grouping {
+    margin-bottom: 5px;
+    padding-right: 10px;
+    clear: left;
+}
+.overview_widget .job {
+    clear: both;
+    margin: 5px 0;
+    margin-left: 15px;
+    width: 100%;
+}
+.overview_widget .job a {
+    float: left;
+    margin-right: 1em;
+}
+.job .progress_bar_container {
+    float: left;
+    width: 14em;
+    height: 10px;
+    border:1px solid #CCC;
+    background: #FFF;
+    margin-top: 5px;
+}
+.job .progress_bar_container div {
+    height: 100%;
+    background: #999 url(../images/g9/backgrounds/bg_status_gradient.png?2.1.0) repeat-x;
+}
+.job .elapsed_time{
+    white-space: nowrap;
+}
+
+
+/*
+ * Materials - Pipeline Details
+ */
+#stages .content .changes {
+    clear: both;
+    border-top: 1px solid #CCC;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+#stages .build_cause {
+    float: left;
+    width: 100%;
+}
+#stages .build_cause .material {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+#stages .build_cause .material_name {
+    padding: 6px;
+    font-size: 12px;
+    background-color: #eee;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+
+
+
+}
+#stages .build_cause .change {
+    clear: both;
+    border-bottom: 1px dotted #CCC;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+}
+
+#stages .build_cause .change div {
+    padding-bottom: 5px;
+    clear: both;
+    overflow: hidden;
+}
+
+#stages .build_cause dl {
+    clear: both;
+}
+#stages .build_cause dt{
+    float: left;
+    padding: 5px 0;
+    font-weight: bold;
+    /*width: 6em;*/
+}
+#stages .build_cause dd{
+    /*margin-left: 9em;*/
+    float: left;
+    padding: 5px 0;
+}
+
+#stages .comment {
+    clear: both;
+}
+
+#stages .build_cause .modified_files {
+    clear: both;
+}
+
+#stages .build_cause .modified_files div {
+    padding: 5px 5px 5px 20px;
+    background-repeat: no-repeat;
+    background-position: 0 3px;
+}
+
+
+
+#stages .build_cause .modified_files .added {
+    background-image: url(../images/g9/icons/icon_add.png?2.1.0);
+}
+#stages .build_cause .modified_files .deleted {
+    background-image: url(../images/g9/icons/icon_delete.png?2.1.0);
+}
+#stages .build_cause .modified_files .modified {
+    background-image: url(../images/g9/icons/icon_modified.png?2.1.0);
+}
+
+#stages .build_cause .changed .material_name {
+    background: #eee url(../images/g9/icons/icon_warning_16.png?2.1.0) no-repeat 6px 4px;
+    padding-left: 28px;
+    /*padding-right: 1em;*/
+}
+
+.inline_changes_link {
+    display: inline;
+}
+
+.dashboard_build_cause_like_microcontent_popups .changes .changed { 
+    color: #ffff66;
+    font-style: italic;
+}
+
+.dashboard_build_cause_like_microcontent_popups table.list_table tr.change.changed td a {
+    color: #0080ff;
+}
+
+/**
+ * Stage History
+ */
+
+.stage_history .stage {
+    clear:left;
+    margin: 3px 0 3px -1px;
+    padding:6px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+}
+.stage_history div.stage:hover {
+    background-color: #c3e1f2;
+    border: 1px solid #ccc;
+}
+.stage_history div.stage.selected,
+.stage_history div.stage.selected:hover {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    -moz-box-shadow: inset 0 0 3px #ccc;
+    -webkit-box-shadow: inset 0 0 3px #ccc;
+    box-shadow: inset 0 0 3px #ccc;
+}
+.stage_history .label_counter_wrapper {
+}
+.stage_history .pagination {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+.stage_history .pagination .current_page {
+    font-weight: bold;
+}
+
+.stage_history .pagination span,
+.stage_history .pagination a {
+    margin-right: 4px;
+}
+
+/*
+ * Changes popup
+ */
+
+#stages .dashboard_build_cause_like_microcontent_popups.fbh_microcontent_popup .enhanced_dropdown.failure_detail_popup {
+    max-height: 500px !important;
+    max-width: 700px !important;
+    overflow: auto !important;
+}
+
+.fbh_failure_detail_button {
+    margin-left: .5em;
+}
+
+.dashboard_build_cause_like_microcontent_popups .tooltip_arrow {
+    display: block;
+    height: 15px;
+    background: url(../images/g9/backgrounds/tooltip_up_arrow.png?2.1.0) no-repeat 30px 0;
+    z-index: 2;
+}
+
+
+
+#pipelines .dashboard_build_cause_like_microcontent_popups .enhanced_dropdown, #stages .dashboard_build_cause_like_microcontent_popups.fbh_microcontent_popup .enhanced_dropdown {
+    border: 0;
+    background-color: #333;
+    color: #fff;    
+    width: 100%;
+    padding: 10px;
+    z-index: 1;
+    -moz-border-radius: 6px;
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border-radius: 6px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+
+.dashboard_build_cause_like_microcontent_popups .scrollable_panel {
+    margin-right: -10px;
+}
+
+.dashboard_build_cause_like_microcontent_popups .changes .list_table {
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 0;
+}
+
+.dashboard_build_cause_like_microcontent_popups .changes .list_table th {
+    display: none;
+}
+
+.dashboard_build_cause_like_microcontent_popups .changes table.list_table tbody td {
+    border-bottom: 1px dotted #666;
+    padding: 5px 8px;
+}
+
+.dashboard_build_cause_like_microcontent_popups .build_cause_popup_material_name {
+    font-weight: bold;
+}
+/*
+ * Deploy Popup (Change Materials and Environment Vars
+ */
+
+.change_materials{
+
+}
+
+
+.change_materials .materials,
+.change_materials .variables {
+    font-size: 11px;
+}
+
+.change_materials .material_summaries {
+    -moz-border-radius:5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow:inset 0 0 8px #DDDDDD;
+    -webkit-box-shadow:inset 0 0 8px #DDDDDD;
+    box-shadow:inset 0 0 8px #DDDDDD;
+    background-color:#EEEEEE;
+    border:1px solid #CCCCCC;
+    margin:0;
+    padding:10px;
+    float: left;
+    width: 30%;
+    clear: both;
+}
+
+
+
+.change_materials .material_summary .revision_number {
+    float: left;
+    margin-right: 1em;
+}
+
+.change_materials .material_summary .updated{
+    font-weight: bold;
+    font-style: italic;
+}
+.sub_tabs_container li.updated a,
+.sub_tabs_container li.updated a:hover{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.change_materials .material_summary {
+    clear:left;
+    margin: 3px 0 3px -1px;
+    padding:5px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.change_materials .material_summary:hover {
+    background-color: #c3e1f2;
+    border: 1px solid #ccc
+}
+
+
+.change_materials .material_summaries .selected,
+.change_materials .material_summaries .selected:hover {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    -moz-box-shadow: inset 0 0 3px #ccc;
+    -webkit-box-shadow: inset 0 0 3px #ccc;
+    box-shadow: inset 0 0 3px #ccc;
+}
+
+.change_materials .material_summary .material_name {
+    margin-left:10em;
+}
+
+.change_materials .materials .content_wrapper_outer{
+    float:right;
+    width: 64%;
+}
+
+.change_materials .material_details {
+    background-color: #FFF;
+}
+
+.material_details {
+    padding: 0;
+}
+
+*+html .change_materials .material_details {
+    width: 61.5%;
+}
+
+.change_materials dl dt,
+.change_materials dl dd{
+    padding: 5px;
+}
+.change_materials dl dt {
+    float: left;
+    font-weight: bold;
+}
+.change_materials dl dd {
+    margin-left: 11em;
+}
+.change_materials dl dd input{
+    width: 9em;
+}
+
+.change_materials .smartfill_content {
+    float: left;
+    -moz-box-shadow: 2px 2px 4px #ccc;
+    border: 1px solid #ccc;
+}
+
+*+html .change_materials .smartfill_content {
+    width: 28em;
+}
+
+.change_materials .smartfill_content li {
+    border-bottom: 1px dotted #ccc;
+    clear: left;
+    width: 28em;
+}
+
+.change_materials .smartfill_content .revision,
+    .change_materials .smartfill_content .user {
+    float: left;
+}
+
+.change_materials .smartfill_content .revision {
+    padding-right: .25em;
+    min-width: 2em;
+    border-right: 1px dotted #000;
+}
+
+.change_materials .smartfill_content .user {
+    white-space: nowrap;
+    padding: 0 .25em;
+}
+
+.change_materials .smartfill_content .date {
+    min-width: 5em;
+    float: right;
+    white-space: nowrap;
+    padding-left: .25em;
+    border-left: 1px dotted #000;
+}
+
+.change_materials .smartfill_content .comment {
+    font-style: italic;
+    padding: 0 0 .25em 1em;
+    clear: both;
+}
+.change_materials .variables .content_wrapper_outer{
+    margin: 0;
+}
+.change_materials .variables .content_wrapper_inner{
+    padding: 0;
+}
+.change_materials .variables .variable{
+    clear:both;
+}
+.change_materials .variables label{
+    width: 25em;
+    text-align: right;
+    float: left;
+    margin-right: 1em;
+    line-height: 1.75em;
+    clear: both;
+    margin-bottom: .5em;
+}
+.change_materials .variables .MB_focusable{
+    float: left;
+
+}
+
+.spinny{
+    background: url(../images/g9/icons/spinny_white_16.gif?2.1.0) no-repeat 0 50% transparent;
+    width:16px;
+    height:16px;
+    display:block;
+}
+
+/* Locked icons*/
+
+span.click_to_unlock{
+    float:right !important;
+    margin:0 !important;
+    border-left:none !important;
+    display:block;
+}
+
+span.click_to_unlock a{
+    background: url(../images/g9/icons/icon_lock.png?2.1.0) no-repeat;
+    display:block;
+    width:14px;
+}
+
+span.locked {
+    background: url(../images/g9/icons/icon_lock_locked.png?2.1.0) no-repeat;
+    float:right !important;
+    margin:0 !important;
+    border-left:none !important;
+    width:14px;
+    padding:0 !important;
+    display:block;
+}
+
+/* use black spinny for unlocking */
+
+.locked .spinny{
+    background: url(../images/g9/icons/spinny_black_16.gif?2.1.0) no-repeat 10px 50% transparent;
+    width:16px;
+    height:16px;
+    display:block;
+}
+
+
+/* Pipeline Groups - Changes */
+#pipelines .enhanced_dropdown, #stages .fbh_microcontent_popup .enhanced_dropdown,
+#pipelines .enhanced_dropdown .scrollable_panel {
+    max-width: 50em;
+    width: 50em;
+    padding: 0;
+}
+
+
+
+
+/* Pipeline Selector*/
+#pipelines .pipelines_selector {
+    float:left;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+#pipelines .pipelines_selector .enhanced_dropdown{
+    max-width: 45em;
+    width: 35em;
+    max-height: 55em;
+}
+
+#pipelines .pipelines_selector .enhanced_dropdown .select_all_none_panel{
+    background: #999 url(../images/g9/backgrounds/bg_glass_gradient.png?2.1.0) repeat-x center center;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    overflow: hidden
+}
+
+#pipelines .pipelines_selector .enhanced_dropdown .select_all_none_panel #select_text {
+    float: left;
+    padding: 5px 5px 5px 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+
+#pipelines .pipelines_selector .enhanced_dropdown .scrollable_panel{
+    width: auto;
+    max-width: none;
+    border-top: 0;
+    padding: 10px;
+}
+
+#pipelines .pipelines_selector .enhanced_dropdown .selector_group .label{
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px;
+}
+
+#add_new_environment .pipelines .selector_pipeline .label,
+#pipelines .pipelines_selector .enhanced_dropdown .selector_pipeline .label{
+    font-weight: normal;
+    font-size: 1em;
+}
+
+#pipelines .pipelines_selector .enhanced_dropdown .selector_pipeline {
+    padding: 5px 5px 5px 20px;
+}
+
+#pipelines .pipelines_selector .enhanced_dropdown .selector_group {
+    border-bottom: 1px dotted #ccc;
+    padding: 10px 0 0 5px;
+}
+
+/*
+* Admin Page: Server Configuration Tab
+*/
+
+#user_management,
+#mail_host,
+#license_management{
+    padding: 1em 0 .5em .5em;
+}
+
+.password_file_settings,
+.ldap_settings {
+    border-top: 1px solid #BEBEBE;
+    padding-top: .75em;
+}
+
+.fieldset h3
+{
+    padding: 5px 0;
+    color: #000;
+    font-weight: bold;
+}
+
+fieldset.two-cols button {
+    vertical-align: middle;
+}
+
+/*
+* Admin Page: Users Tab
+*/
+
+#user_summary h1 {
+    float: left;
+}
+
+#user_summary h1 strong{
+    float: left;
+}
+
+#user_summary .list_aggregation li {
+    color: #666;
+}
+
+#user_summary .list_aggregation {
+    margin-top:0;
+}
+
+#search_users_table {
+    height: 371px;
+    overflow-y: auto;
+    overflow-x:hidden;
+}
+
+.add_new_users {
+    float: right;
+}
+
+.clear-float {
+    clear: both;
+}
+/*
+*  Modal box
+*/
+
+#add_error_message p {
+    background: #ffff99 url(../images/g9/icons/icon_info_16.png?2.1.0) no-repeat scroll 10px 50%;
+    font-size: 12px;
+    padding: 10px 10px 10px 36px;
+}
+
+#oauth_page h2 {
+    font-size:18px;
+    margin:10px 0 5px;  
+}
+
+#oauth_page .oauth_config_info {
+    margin-bottom:20px !important;
+}
+
+#oauth_page .info-box {
+    background:#DDEBF3 url(../images/g9/icons/icon_info_16.png?2.1.0) no-repeat scroll 0 0;
+    -moz-border-radius-bottomleft:5px;
+    -moz-border-radius-bottomright:5px;
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-topright:5px;
+    background-position:10px 9px !important;
+    background-repeat:no-repeat;
+    border:1px solid rgba(0, 0, 0, 0.1);
+    color:#333333;
+    padding:10px 10px 10px 36px !important;
+}
+
+#oauth_page .table_actions {
+    margin-top:10px;
+}
+
+#oauth_page a.delete_link {
+    background:transparent url(../images/g9/icons/icon_close_small.png?2.1.0) no-repeat scroll 0 0;
+    display:block;
+    height:14px;
+    padding:0;
+    width:14px;
+}
+#oauth_page a.delete_link:hover{
+    background:transparent url(../images/g9/icons/icon_close_hover_small.png?2.1.0) repeat scroll 0 0;
+}
+
+#oauth_page a.delete_link span {
+    display: none;
+}
+
+#oauth_page .oauth_config_info span {
+  font-weight: bold;
+}
+
+/*
+* ======= ADD ALL NEW STYLES ABOVE THIS LINE.  ONLY FLOAT CLEARING SHOULD GO BELOW ============
+*/
+
+/*
+* Float Clearing
+*/
+ul.variables:after,
+.environments .stages:after,
+.change_materials .materials:after,
+.change_materials:after,
+.environment .pipeline .deploy:after,
+.page_title_bar .other_runs li:after,
+.overview_widget:after,
+.overview_widget .job_grouping:after,
+.pipeline_bundle:after,
+.stage_history .stage:after,
+.pipeline_bundle:after,
+.pipeline_bundle .pipeline .title:after,
+.pipeline_bundle .pipeline .pipeline_instance_details:after,
+.pipeline_bundle .pipeline .previously:after,
+#pipeline_visualization:after,
+#pipelines .pipelines_selector:after,
+#ajax_agents_header:after,
+.pipeline_bundle .pipeline_operations:after,
+#user_summary h1:after
+{
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+<!--[if IE 7]>
+
+*+html ul.variables,
+*+html .environments .stages,
+*+html .change_materials .materials,
+*+html .change_materials,
+*+html .environment .pipeline .deploy,
+*+html .page_title_bar .other_runs li,
+*+html .overview_widget,
+*+html .overview_widget .job_grouping,
+*+html .stage_history .stage,
+*+html .pipeline_bundle,
+*+html .pipeline_bundle .pipeline .title,
+*+html .pipeline_bundle .pipeline .pipeline_instance_details,
+*+html .pipeline_bundle .pipeline .previously,
+*+html #pipeline_visualization,
+*+html #pipelines .pipelines_selector,
+*+html #ajax_agents_header
+*+html .pipeline,
+*+html .pipeline_bundle .pipeline_operations,
+*+html #user_summary h1
+{
+    display: inline-block;
+    zoom: 1;
+}
+<![endif]-->
+
+
+<!--[if IE]>
+<style type="text/css">
+ul.variables,
+.environments .stages,
+.change_materials .materials,
+.change_materials,
+.environment .pipeline .deploy,
+.page_title_bar .other_runs li,
+.overview_widget,
+.overview_widget .job_grouping,
+.stage_history .stage,
+.pipeline_bundle,
+.pipeline_bundle .pipeline .title,
+.pipeline_bundle .pipeline .pipeline_instance_details,
+.pipeline_bundle .pipeline .previously,
+#pipeline_visualization,
+#pipelines .pipelines_selector,
+#ajax_agents_header,
+.pipeline,
+.pipeline_bundle .pipeline_operations,
+#user_summary h1
+{
+    zoom: 1; /* triggers hasLayout */
+    display: block; /* resets display for IE/Win */
+    height: 1%;
+}
+
+/* Only IE can see inside the conditional comment
+and read this CSS rule. Don't ever use a normal HTML
+comment inside the CC or it will close prematurely. */
+</style>
+<![endif]-->

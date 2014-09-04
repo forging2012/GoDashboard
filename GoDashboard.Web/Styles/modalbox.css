@@ -1,0 +1,214 @@
+#MB_overlay {
+	position: absolute;
+	margin: auto;
+	top: 0;
+    left: 0;
+	width: 100%;
+    height: 100%;
+	z-index: 9999;
+	border: 0;
+	background-color: #333 !important;
+}
+#MB_overlay[id] { position: fixed; }
+
+#MB_window {
+	position: absolute;
+	top: 10%;    
+	border: 0 solid;
+	text-align: left;
+	z-index: 10000;
+}
+#MB_window[id] { position: fixed!important; }
+
+#MB_frame_content {
+	position: relative;
+	background-color: #FFF;
+	-moz-box-shadow: 0 0 15px #000;
+	-webkit-box-shadow: 0 0 15px #000;
+	box-shadow: 0 0 15px #000;
+	
+}
+
+#MB_header {
+	margin: 0;
+	padding: 0;
+	background: #333 url(../images/g9/backgrounds/bg_glass_gradient.png?2.1.0) repeat-x center center;
+}
+
+#MB_content {
+	overflow: visible !important; /* move all overflow auto to the inner content div */
+}
+
+#MB_caption {
+	padding: 10px;
+    font-size: 18px;
+	margin: 0;
+	text-align: left;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #fff;
+}
+
+#MB_close {
+	display: block;
+	position: absolute;
+	right: 9px;
+    top: 9px;
+	padding: 0;
+	font-weight: bold;
+	text-decoration: none;
+    background-image: url(../images/g9/icons/sprite_modal_close.png?2.1.0);
+    background-position: 0 -30px;
+    height: 23px;
+    width: 23px;
+}
+
+#MB_close:hover {
+    background-position: 0 0;
+}
+
+#MB_loading {
+	padding: 1.5em;
+	text-indent: -10000px;
+	background: transparent url(spinner.gif?2.1.0) 50% 0 no-repeat;
+}
+
+/* Color scheme */
+#MB_window {
+	/*background-color: #EFEFEF;*/
+	/*color: #000;*/
+	/*-webkit-box-shadow: 0 0 64px #000; */
+	/*-moz-box-shadow: #000 0 0 64px; */
+	/*box-shadow: 0 0 64px #000;*/
+    /*border: 1px solid #818181;*/
+}
+#MB_frame {
+    /*padding-bottom: 4px;*/
+    /**/
+    /*-webkit-border-bottom-left-radius: 4px;*/
+    /*-webkit-border-bottom-right-radius: 4px;*/
+
+    /*-moz-border-radius-bottomleft: 4px;*/
+    /*-moz-border-radius-bottomright: 4px;*/
+
+    /*border-bottom-left-radius: 4px;*/
+    /*border-bottom-right-radius: 4px;*/
+}
+
+
+
+/* Alert message */
+.MB_alert {
+	margin: 10px 0;
+	text-align: center;
+}
+
+
+#MB_content .sub_tabs_container {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    margin-bottom: 0 !important;
+}
+
+#MB_content .sub_tab_container,
+#MB_content .form_content {
+    height: 360px;
+    overflow: auto;
+    padding: 15px;
+}
+
+#MB_content .content_wrapper_outer .content_wrapper_inner {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* action row and buttons */
+
+#MB_content .actions {
+    margin: 0;
+    padding: 10px 0;
+    text-align: right;
+    border-top: 1px solid #CCC;
+    background: #EEEEE9 url(../images/g9/backgrounds/overlay_modal_action_row.png?2.1.0) repeat-x;
+    bottom: 0;
+    border-radius: 0;
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0;
+    box-shadow: none;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+    
+}
+
+
+/* janky way to add margin on the close button */
+#MB_content .actions button {
+    margin-right: 10px;
+}
+
+
+/* Styling for blurred background/gradient */
+
+/*
+#MB_frame_top{
+    background: url(../images/g9/lightbox/lb_tb.png?2.1.0) repeat-x 0 -35px transparent;
+    height: 35px;
+    margin: 0 35px;
+    position: relative;
+}
+#MB_frame_bottom{
+    background: url(../images/g9/lightbox/lb_tb.png?2.1.0) repeat-x 0 0 transparent;
+    height: 35px;
+    margin: 0 35px;
+    position: relative;
+}
+
+#MB_frame{
+    background: url(../images/g9/lightbox/lb_rl.png?2.1.0) repeat-y 0 0 transparent;
+    padding-left: 35px;
+    position: relative;
+}
+
+#MB_frame_right{
+    background: url(../images/g9/lightbox/lb_rl.png?2.1.0) repeat-y right center transparent;
+    padding-right: 35px;
+    position: relative;
+}
+
+#MB_frame_tl{
+    background: url(../images/g9/lightbox/lb_corners.png?2.1.0) no-repeat -35px -35px transparent;
+    height: 35px;
+    width: 35px;
+    position:absolute;
+    top:0;
+    left:-35px;
+}
+#MB_frame_tr{
+    background: url(../images/g9/lightbox/lb_corners.png?2.1.0) no-repeat 0 -35px transparent;
+    height: 35px;
+    width: 35px;
+    position:absolute;
+    top:0;
+    right:-35px;
+}
+
+#MB_frame_bl{
+    background: url(../images/g9/lightbox/lb_corners.png?2.1.0) no-repeat -35px 0 transparent;
+    height: 35px;
+    width: 35px;
+    position:absolute;
+    top:0;
+    left:-35px;
+}
+#MB_frame_br{
+    background: url(../images/g9/lightbox/lb_corners.png?2.1.0) no-repeat 0 0 transparent;
+    height: 35px;
+    width: 35px;
+    position:absolute;
+    top:0;
+    right:-35px;
+}
+*/

@@ -1,0 +1,186 @@
+/************************
+ * Wizard Steps
+ ************************/
+
+.steps_wrapper .tabs a,
+.steps_wrapper .tabs a.current {
+    -moz-border-radius: 0;
+    -moz-box-shadow: none;
+    margin-right: 36px;
+    margin-top: 3px;
+    margin-left: 24px;
+    padding: 7px 24px 12px 0;
+    font-size: 12px;
+    color: #000;
+    text-align: left;
+}
+
+.steps_wrapper .tabs a {
+    background: none;
+}
+
+.steps_wrapper .tabs a:hover {
+    background-color: transparent;
+}
+
+.steps_wrapper .tabs li.current_tab a {
+    color: #FFF;
+    background: url(../images/g9/step_current.png?2.1.0) bottom left transparent no-repeat;
+}
+
+.steps_wrapper .tabs a div {
+    font-weight: bold;
+}
+
+.steps_wrapper {
+    display: block;
+    background: #666 url(../images/g9/backgrounds/bg_gradient_50.png?2.1.0) repeat-x center left !important;
+    -moz-border-radius: 6px;
+    padding:0;
+}
+
+.steps_wrapper li {
+    display: inline;
+
+    margin-right: 5px;
+}
+
+.steps_wrapper li.view_label,
+.steps_wrapper li a {
+    font-size: 11px;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+
+.steps_wrapper li.view_label {
+    color: #FFF;
+}
+
+.steps_wrapper li a {
+    padding: 5px 12px;
+    background: #000 url(../images/g9/backgrounds/overlay_gradient_30px.png?2.1.0) repeat-x;
+    color: #FFF;
+    -moz-border-radius: 4px;
+    margin-top: 6px;
+
+}
+
+.steps_wrapper li a:hover {
+    background-color: #222;
+}
+
+.steps_panes {
+    clear: both;
+}
+
+.steps_panes .form_content {
+    font-size: 12px;
+
+}
+
+.steps_panes .form_content .step_title {
+    font-size: 16px;
+}
+
+.steps_panes .form_content .step_instruction {
+    font-size: 14px;
+}
+
+.step_answer_choice {
+    float: left;
+    margin: 6px 24px 6px 0;
+}
+
+.steps_wrapper a.link_as_button span {
+    font-size: 12px;
+    padding: 1px 0;
+}
+
+.wizard_form .form_buttons {
+  border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    -webkit-border-radius: 0 0 6px 6px;
+  
+}
+
+/**
+ * Agent form section
+**/
+
+#tab-content-of-env-agents .form_content {
+  padding: 0;
+  height: 380px; /* override the height from padding on normal form_content   */
+}
+
+#tab-content-of-env-agents .form_content table {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+/**
+ * Pipelines form section
+**/
+
+/**
+ * Wizard form section 
+**/
+
+.wizard_form .form_content {
+    padding: 15px;
+    height: 350px;
+    overflow:auto;
+    border:1px solid #CCC;
+}
+
+
+/*
+ Float Closures
+*/
+.steps_wrapper:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+<!--
+[if IE
+
+7
+]
+>
+*+html .steps_wrapper {
+    display: inline-block;
+    zoom: 1;
+}
+
+<![endif]
+
+-->
+
+<!--
+[if IE
+
+]
+>
+<style type
+
+=
+"text/css"
+>
+.steps_wrapper {
+    zoom: 1;
+    display: block;
+    height: 1%;
+
+}
+
+<
+
+/
+style>
+<![endif]
+
+-->

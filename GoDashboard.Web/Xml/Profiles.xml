@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Profiles>
+    <Profile name="Profile">
+        <WhiteList>
+            <Group name="Group 1" showName="true">
+                <Pipeline></Pipeline>
+            </Group>
+        </WhiteList>
+        <Statuses>
+            <Passed/>
+            <Failed/>
+            <Building/>
+        </Statuses>
+    </Profile>
+</Profiles>
