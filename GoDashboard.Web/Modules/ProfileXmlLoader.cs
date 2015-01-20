@@ -9,7 +9,7 @@ namespace GoDashboard.Web.Modules
 {
     public class ProfileXmlLoader
     {
-        public Profile Load(XElement profilesXml)
+        public Profile Load(XElement profilesXml, List<PipelineStatus> pipelineStatuses)
         {
             var profile = new Profile();
 
@@ -40,24 +40,32 @@ namespace GoDashboard.Web.Modules
 
                     var profilePipelines = LoadProfilePipelines(groupPipelineNodes);
 
-                    var groupedPipeline = new GroupedPipeline { Name = groupName, ProfilePipelines = profilePipelines, ShowName = showName};
+                    var groupedPipeline = new GroupedPipeline { Name = groupName, ProfilePipelines = profilePipelines, ShowName = showName };
                     profile.PipelineGroups.Add(groupedPipeline);
                 }
             }
 
             var statusList = new List<PipelineStatus>();
-            var statusXml = profilesXml.Element("Statuses");
-            if (statusXml.HasElements)
+
+            if (pipelineStatuses.Any())
             {
-                var statusElements = statusXml.Elements();
-                foreach (var statusElement in statusElements)
+                statusList = pipelineStatuses;
+            }
+            else
+            {
+                var statusXml = profilesXml.Element("Statuses");
+                if (statusXml.HasElements)
                 {
-                    if (statusElement.Name == "Failed")
-                        statusList.Add(PipelineStatus.Failed);
-                    if (statusElement.Name == "Passed")
-                        statusList.Add(PipelineStatus.Passed);
-                    if (statusElement.Name == "Building")
-                        statusList.Add(PipelineStatus.Building);
+                    var statusElements = statusXml.Elements();
+                    foreach (var statusElement in statusElements)
+                    {
+                        if (statusElement.Name == "Failed")
+                            statusList.Add(PipelineStatus.Failed);
+                        if (statusElement.Name == "Passed")
+                            statusList.Add(PipelineStatus.Passed);
+                        if (statusElement.Name == "Building")
+                            statusList.Add(PipelineStatus.Building);
+                    }
                 }
             }
 
@@ -99,6 +107,11 @@ namespace GoDashboard.Web.Modules
                 profilePipelines.Add(profilePipeline);
             }
             return profilePipelines;
+        }
+
+        public Profile Load(XElement profilesXml)
+        {
+            return Load(profilesXml, new List<PipelineStatus>());
         }
     }
 }

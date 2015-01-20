@@ -1,18 +1,19 @@
 ﻿<viewdata model="ViewModels.IndexViewModel"/>
 <if condition="Model.Groups.Count() == 0">
   <for each="var pipeline in Model.Pipelines">
-	<pipelines />
+    <pipelines />
   </for>
 </if>
 <else>
   <for each="var group in Model.Groups">
-    
+    <if condition="group.Pipelines.Count() > 0">
       <h2 class="group">
         <if condition="group.ShowName == true">${group.Name}</if>
       </h2>
-    
-    <for each="var pipeline in group.Pipelines">
-      <pipelines />
-    </for>
+
+      <for each="var pipeline in group.Pipelines">
+        <pipelines />
+      </for>
+    </if>
   </for>
 </else>

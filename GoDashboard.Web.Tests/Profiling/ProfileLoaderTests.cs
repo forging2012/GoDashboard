@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Xml.Linq;
 using GoDashboard.Web.Models;
 using GoDashboard.Web.Modules;
@@ -226,6 +227,35 @@ namespace GoDashboard.Web.Tests.Profiling
 
             Assert.That(profile.PipelineGroups[0].ProfilePipelines[0].Alias, Is.Null);
             Assert.That(profile.PipelineGroups[0].ProfilePipelines[1].Alias, Is.EqualTo("This is an alias"));
+        }
+
+        [Test]
+        public void Only_show_requested_status_pipelines_even_if_statuses_say_otherwise()
+        {
+            var profileXml = XElement.Parse("<Profile name=\"test\">"
+                                + "<WhiteList>"
+                                    + "<Group>"
+                                     + "<Pipeline>Pipeline1</Pipeline>"
+                                     + "<Pipeline>Pipeline2</Pipeline>"
+                                    + "</Group>"
+                                    + "<Group>"
+                                     + "<Pipeline>Pipeline3</Pipeline>"
+                                     + "<Pipeline>Pipeline4</Pipeline>"
+                                    + "</Group>"
+                                    + "</WhiteList>"
+                                + "<Statuses>"
+                                    + "<Passed/>"
+                                    + "<Failed/>"
+                                    + "<Building/>"
+                                + "</Statuses>"
+                                + "</Profile>");
+
+            var profileXmlLoader = new ProfileXmlLoader();
+
+            var profile = profileXmlLoader.Load(profileXml, new List<PipelineStatus>{PipelineStatus.Failed});
+
+            Assert.That(profile.Statuses.Count(), Is.EqualTo(1));
+            Assert.That(profile.Statuses.First(), Is.EqualTo(PipelineStatus.Failed));
         }
     }
 }

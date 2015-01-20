@@ -19,6 +19,7 @@ Dashboard configured to show 3 groups of pipelines, 2 with Group headers.
 2. Modify `GoDashboard.Web\Xml\Profiles.xml` to configure your dashboard profiles. See [Profiles.xml](#profilesxml) below for full details.
 3. Compile and deploy to an IIS server. (Tested on IIS 7.5+)
 4. To load a specific profile (defined in the XML), append `?profileName=<profilename>` to the address.
+5. To override the statuses defined in the profile XML, append `&status=<status(es)>` to the address, where `<status(es)>` are a comma seperated list of `building`, `failed` or `passed` (e.g. `&status=building,failed`).
 
 <a name="profilesxml"></a>
 ### Profiles.xml
@@ -36,7 +37,7 @@ This is the XML for the screen shot above.
             <Pipeline>Website-QA</Pipeline>
         </Group>
         <Group name="Group 2" showName="true">
-            <Pipeline  hideBuildInfo="true">API-CI</Pipeline>
+            <Pipeline hideBuildInfo="true">API-CI</Pipeline>
             <Pipeline hideBuildInfo="true">API-QA</Pipeline>
         </Group>
         <Group name="Group 3" showName="false">
@@ -90,13 +91,13 @@ This is the XML for the screen shot above.
                             <xs:element name="Statuses">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element type="xs:string" name="Passed" minOccurs="0"/>
-                                        <xs:element type="xs:string" name="Failed" minOccurs="0"/>
-                                        <xs:element type="xs:string" name="Building" minOccurs="0"/>
+                                        <xs:element type="xs:string" name="Passed" minOccurs="0" maxOccurs="1"/>
+                                        <xs:element type="xs:string" name="Failed" minOccurs="0" maxOccurs="1"/>
+                                        <xs:element type="xs:string" name="Building" minOccurs="0" maxOccurs="1"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element type="xs:string" name="ShowPassedCount" minOccurs="0"/>
+                            <xs:element type="xs:string" name="ShowPassedCount" minOccurs="0" maxOccurs="1"/>
                         </xs:sequence>
                         <xs:attribute type="xs:string" name="name" use="optional"/>
                     </xs:complexType>

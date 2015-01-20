@@ -2,6 +2,7 @@
 {
     public enum PipelineStatus
     {
+        Unspecified,
         Failed,
         Passed,
         Building
