@@ -1,7 +1,7 @@
 ﻿<div class="${pipeline.Status} statusbox" id="${pipeline.Name.Replace('.','')}">
   <div class="innercontent">
     <h1 title="${pipeline.Name}" ${pipeline.HideBuildInfo?'class="long"' : ''}>
-      <a href="http://go.laterooms.com:8153/go/tab/pipeline/history/${pipeline.Name}" target="_Blank">
+      <a href="${pipeline.Url}" target="_Blank">
         <if condition="pipeline.HideBuildInfo == false">
           ${pipeline.DisplayName.Length < 16 ? pipeline.DisplayName : pipeline.DisplayName.Substring(0,16) + "…"}
         </if>

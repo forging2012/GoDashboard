@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using GoDashboard.Web.Models;
 
@@ -59,6 +60,11 @@ namespace GoDashboard.Web.ViewModels
                 }
                 return Status == "building" ? PipelineStatus.Building : PipelineStatus.Passed;
             }
+        }
+
+        public string Url
+        {
+            get { return string.Format("{0}go/tab/pipeline/history/{1}", ConfigurationManager.AppSettings["GoUrl"], Name); }
         }
 
         private string GetStatus()
