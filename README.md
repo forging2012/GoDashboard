@@ -17,7 +17,7 @@ Dashboard configured to show 3 groups of pipelines, 2 with Group headers.
 
 1. Modify `GoDashboard.Web\AppSettings.config` to set your Go username and password and set the URL to the CC Tray XML end point. It is advisable to create a user account in Go that has readonly permissions to all pipelines and use this account for the dashboard.
 2. Modify `GoDashboard.Web\Xml\Profiles.xml` to configure your dashboard profiles. See [Profiles.xml](#profilesxml) below for full details.
-3. Compile and deploy to an IIS server. (Tested on IIS 7.5+)
+3. Compile (.NET 4.5 required) and deploy to an IIS server. (Tested on IIS 7.5+)
 4. To load a specific profile (defined in the XML), append `?profileName=<profilename>` to the address.
 5. To override the statuses defined in the profile XML, append `&status=<status(es)>` to the address, where `<status(es)>` are a comma seperated list of `building`, `failed` or `passed` (e.g. `&status=building,failed`).
 
