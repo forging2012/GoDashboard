@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web.Mvc;
 using GoDashboard.Web.Models;
 using GoDashboard.Web.Modules;
-using GoDashboard.Web.Modules.Interfaces;
 using GoDashboard.Web.ViewModels;
 
 namespace GoDashboard.Web.Controllers
@@ -64,14 +63,14 @@ namespace GoDashboard.Web.Controllers
                 groups = pipelineFilter.Filter(profile);
                 showPassedCount = profile.ShowPassedCount;
             }
-            
+
             return new IndexViewModel
-                       {
-                           Pipelines = pipelines,
-                           PassedCount = passedCount,
-                           Groups = groups,
-                           ShowPassedCount = showPassedCount
-                       };
+            {
+                Pipelines = pipelines,
+                PassedCount = passedCount,
+                Groups = groups,
+                ShowPassedCount = showPassedCount
+            };
         }
 
         private static PipelineStatus ParseStatus(string status)

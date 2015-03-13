@@ -1,0 +1,11 @@
+﻿@model GoDashboard.Web.ViewModels.IndexViewModel
+
+@if (Model.ShowPassedCount)
+{
+    <div class="passed statusbox" id="passedCount">
+		<div class="innercontent">
+			<h1 title="Passed Count">Passed: @Model.PassedCount</h1>
+		</div>
+	</div>
+	<div class="inbetweeny" id="passedCountIBT"></div>
+}

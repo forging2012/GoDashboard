@@ -27,8 +27,8 @@ namespace GoDashboard.Web.ViewModels
 
         public string Alias { get; set; }
 
-        public string DisplayName 
-        { 
+        public string DisplayName
+        {
             get
             {
                 return Alias ?? Name;
@@ -65,6 +65,46 @@ namespace GoDashboard.Web.ViewModels
         public string Url
         {
             get { return string.Format("{0}go/tab/pipeline/history/{1}", ConfigurationManager.AppSettings["GoUrl"], Name); }
+        }
+
+        public string SanitizedName
+        {
+            get { return Name.Replace(".", string.Empty); }
+        }
+
+        public string NameClass
+        {
+            get { return HideBuildInfo ? "class=\"long\"" : string.Empty; }
+        }
+
+        public string ProcessedDisplayName
+        {
+            get
+            {
+                if (HideBuildInfo)
+                {
+                    if (DisplayName.Length < 27)
+                    {
+                        return DisplayName;
+                    }
+                    return DisplayName.Substring(0, 24) + "…";
+                }
+                if (DisplayName.Length < 16)
+                {
+                    return DisplayName;
+                }
+                return DisplayName.Substring(0, 15) + "…";
+            }
+        }
+
+        public int PipelineStageWidth
+        {
+            get { return 4 + (Stages.Count * 22); }
+        }
+
+        public string ProcessedLastBuildLabel
+        {
+            get { return LastBuildLabel.Length < 16 ? LastBuildLabel : LastBuildLabel.Substring(0, 15) + "…"; }
         }
 
         private string GetStatus()

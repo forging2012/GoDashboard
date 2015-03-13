@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-
 using GoDashboard.Web.ViewModels;
 
 namespace GoDashboard.Web.Models
@@ -8,7 +7,7 @@ namespace GoDashboard.Web.Models
     {
         public Profile()
         {
-            Statuses = new List<PipelineStatus> {PipelineStatus.Passed, PipelineStatus.Failed, PipelineStatus.Building};
+            Statuses = new List<PipelineStatus> { PipelineStatus.Passed, PipelineStatus.Failed, PipelineStatus.Building };
         }
         public IEnumerable<PipelineStatus> Statuses;
         public bool ShowPassedCount;

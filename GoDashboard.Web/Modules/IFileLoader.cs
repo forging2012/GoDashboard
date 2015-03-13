@@ -1,4 +1,4 @@
-﻿namespace GoDashboard.Web.Modules.Interfaces
+﻿namespace GoDashboard.Web.Modules
 {
     public interface IFileLoader
     {

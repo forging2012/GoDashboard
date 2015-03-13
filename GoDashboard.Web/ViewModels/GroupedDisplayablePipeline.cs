@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using GoDashboard.Web.Controllers;
 
 namespace GoDashboard.Web.ViewModels
 {

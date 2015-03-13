@@ -1,42 +1,42 @@
 
 
-.content_header h3 { 
-  display: inline;
-  float: left;
+.content_header h3 {
+    display: inline;
+    float: left;
 }
 
 .content_header ul {
-  float: right;
-  clear:right;
+    float: right;
+    clear: right;
 }
 
-.content_header ul li { 
-  display: inline;
-  font-size: 9pt;
-  padding-right: 3em;
-}
+    .content_header ul li {
+        display: inline;
+        font-size: 9pt;
+        padding-right: 3em;
+    }
 
-a.contextual_help { 
-  color: #fff;
-  cursor: help;
+a.contextual_help {
+    color: #fff;
+    cursor: help;
 }
 
 .material li span {
-  display: inline;
-  margin-right: .5em;
-  vertical-align: top;
+    display: inline;
+    margin-right: .5em;
+    vertical-align: top;
 }
 
 .material div.deployment_info {
     margin-left: 1em;
 }
 
-.material div.deployment_info div {
-    margin-bottom: .5em;
-}
+    .material div.deployment_info div {
+        margin-bottom: .5em;
+    }
 
 .material div.revisions {
-    overflow-y:auto;
+    overflow-y: auto;
     margin-bottom: 1em;
     border: 1px solid #9E9E9E;
 }
@@ -46,9 +46,9 @@ a.contextual_help {
 }
 
 .content_header ul li strong {
-  color: #fff;
-  font-size: 10pt;
-  padding-left: 1em;
+    color: #fff;
+    font-size: 10pt;
+    padding-left: 1em;
 }
 
 
@@ -62,7 +62,7 @@ h2.group {
     font-weight: bold;
     color: #ffffff;
     padding: 10px;
-    clear: both;    
+    clear: both;
 }
 
 .innercontent h1.long {
@@ -70,32 +70,100 @@ h2.group {
 }
 
 
-.statusbox {width:23.5%; margin:5px 0px; border-radius:7px; -moz-border-radius:7px; display:inline; float:left; text-align:center; padding-bottom:20px; height:55px;}
-.inbetweeny {width:1%; height:89px; display:inline; float:left;}
-
-.smallbox {width:13px; height:25px; display:inline; float:left; margin:2px; border:2px solid #404040 !important; border-radius:3px; -moz-border-radius:3px; box-shadow:0 0 2px #000; }
-.pipelinesmini { float:left; margin-top:5px;margin-left:auto; margin-right:auto; }
-.innercontent { margin:5px 10px 0 10px; text-align: left;}
-
-.building { background:url(/Content/building-loader.gif) repeat-y !important;}
-.fixing {color:#EDA; background-color:#44D;}
-
-#content {display:inline;float:left; width:99%;}
-#inlinecontent {display:inline;float:left;width:1%;height:80px;}
-
-#Shared {width:98%;}
-
-.buildlabel { float: right; margin-top: -18px; font-size: 2em; font-weight: bold; text-align: right; }
-.buildlabel span {font-size:0.64em;}
-
-.lastbuildlabel { text-align: right; }
-.lastbuildtime { float: right; }
-span.buildfixer {font-size:0.9em; margin-left:40px;}
-
-.cruisefail
-{
-    background-color: #2299DD;
+.statusbox {
+    width: 23.5%;
+    margin: 5px 0px;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    display: inline;
+    float: left;
+    text-align: center;
+    padding-bottom: 20px;
+    height: 55px;
 }
 
-#LatestTweet {color: #404040; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); font-size:2.7em; font-weight:bold;}
-.marquee { margin: 5px 20px 0 10px; padding:0px; border:1px solid #dadada; border-radius:5px; -moz-border-radius:5px;  background: -moz-linear-gradient(center bottom , #DDF4FB 0%, #C6EDF9 100%); background-image: -webkit-gradient(linear, center top, center bottom, from(#DDF4FB), to(#C6EDF9)); }
+.inbetweeny {
+    width: 1%;
+    height: 89px;
+    display: inline;
+    float: left;
+}
+
+.smallbox {
+    width: 13px;
+    height: 25px;
+    display: inline;
+    float: left;
+    margin: 2px;
+    border: 2px solid #404040 !important;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    box-shadow: 0 0 2px #000;
+}
+
+.pipelinesmini {
+    float: left;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.innercontent {
+    margin: 5px 10px 0 10px;
+    text-align: left;
+}
+
+.building {
+    background: url(/Content/building-loader.gif) repeat-y !important;
+}
+
+.fixing {
+    color: #EDA;
+    background-color: #44D;
+}
+
+#content {
+    display: inline;
+    float: left;
+    width: 99%;
+}
+
+#inlinecontent {
+    display: inline;
+    float: left;
+    width: 1%;
+    height: 80px;
+}
+
+#Shared {
+    width: 98%;
+}
+
+.buildlabel {
+    float: right;
+    margin-top: -18px;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: right;
+}
+
+    .buildlabel span {
+        font-size: 0.64em;
+    }
+
+.lastbuildlabel {
+    text-align: right;
+}
+
+.lastbuildtime {
+    float: right;
+}
+
+span.buildfixer {
+    font-size: 0.9em;
+    margin-left: 40px;
+}
+
+.cruisefail {
+    background-color: #2299DD;
+}

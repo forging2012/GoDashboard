@@ -12,6 +12,7 @@ namespace GoDashboard.Web.Models
         {
             Pipelines = new List<Pipeline>();
         }
+
         public List<Pipeline> Pipelines;
         public string Name;
 
@@ -39,7 +40,11 @@ namespace GoDashboard.Web.Models
                 if (ConfigurationManager.AppSettings[Name + "Label"] == null)
                     return LastBuildLabelPipeline.LastBuildLabelInt.ToString();
 
-                return Pipelines.First(x => x.ActualName.IndexOf(ConfigurationManager.AppSettings[Name + "Label"], StringComparison.Ordinal) >= 0).LastBuildLabel + "(" + LastBuildLabelPipeline.LastBuildLabelInt + ")";
+                return
+                    Pipelines.First(
+                        x =>
+                        x.ActualName.IndexOf(ConfigurationManager.AppSettings[Name + "Label"], StringComparison.Ordinal) >=
+                        0).LastBuildLabel + "(" + LastBuildLabelPipeline.LastBuildLabelInt + ")";
             }
         }
 
@@ -47,9 +52,12 @@ namespace GoDashboard.Web.Models
         {
             get
             {
-                return Pipelines.Count(x => x.Status == "failed") > 0 ? 
-                    Pipelines.Where(x => x.Status == "failed").OrderBy(x => x.LastBuildLabelInt).ToList().First() : 
-                    Pipelines.OrderByDescending(x => x.LastBuildLabelInt).ToList().First();
+                return Pipelines.Count(x => x.Status == "failed") > 0
+                           ? Pipelines.Where(x => x.Status == "failed")
+                                      .OrderBy(x => x.LastBuildLabelInt)
+                                      .ToList()
+                                      .First()
+                           : Pipelines.OrderByDescending(x => x.LastBuildLabelInt).ToList().First();
             }
         }
 
@@ -57,25 +65,33 @@ namespace GoDashboard.Web.Models
         {
             get
             {
-                return Pipelines.Count(x => x.Status == "failed") > 0 ? 
-                    Pipelines.Where(x => x.Status == "failed").OrderByDescending(x => x.LastBuildTimeDateTime).ToList().First().LastBuildTimeDateTime : 
-                    Pipelines.OrderByDescending(x => x.LastBuildTimeDateTime).ToList().First().LastBuildTimeDateTime;
+                return Pipelines.Count(x => x.Status == "failed") > 0
+                           ? Pipelines.Where(x => x.Status == "failed")
+                                      .OrderByDescending(x => x.LastBuildTimeDateTime)
+                                      .ToList()
+                                      .First()
+                                      .LastBuildTimeDateTime
+                           : Pipelines.OrderByDescending(x => x.LastBuildTimeDateTime)
+                                      .ToList()
+                                      .First()
+                                      .LastBuildTimeDateTime;
             }
         }
 
         public string LastBuildTime
         {
-            get
-            {
-                return LastBuildTimeDateTime.ToString("yyyy-MM-ddTHH:mm:ss");
-            }
+            get { return LastBuildTimeDateTime.ToString("yyyy-MM-ddTHH:mm:ss"); }
         }
 
         public string FixOverdue
         {
             get
             {
-                return Pipelines.Count(x => x.Status == "failed" && x.LastBuildTimeDateTime.AddMinutes(30) < DateTime.Now) > 0 ? "overdue" : "good";
+                return
+                    Pipelines.Count(x => x.Status == "failed" && x.LastBuildTimeDateTime.AddMinutes(30) < DateTime.Now) >
+                    0
+                        ? "overdue"
+                        : "good";
             }
         }
 
@@ -84,20 +100,21 @@ namespace GoDashboard.Web.Models
             if (xmlNode.Attributes != null)
             {
                 var pipelineName = xmlNode.Attributes["name"].Value;
-                if (pipelineName.IndexOf("::", StringComparison.Ordinal) == pipelineName.LastIndexOf("::", StringComparison.Ordinal))
+                if (pipelineName.IndexOf("::", StringComparison.Ordinal) ==
+                    pipelineName.LastIndexOf("::", StringComparison.Ordinal))
                 {
                     DateTime lastBuildTimeDateTime;
                     DateTime.TryParse(xmlNode.Attributes["lastBuildTime"].Value, out lastBuildTimeDateTime);
 
                     var pipeline = new Pipeline
-                    {
-                        Name = pipelineName,
-                        Activity = xmlNode.Attributes["activity"].Value,
-                        LastBuildStatus = xmlNode.Attributes["lastBuildStatus"].Value,
-                        LastBuildLabel = xmlNode.Attributes["lastBuildLabel"].Value,
-                        LastBuildTimeDateTime = lastBuildTimeDateTime,
-                        WebUrl = xmlNode.Attributes["webUrl"].Value
-                    };
+                        {
+                            Name = pipelineName,
+                            Activity = xmlNode.Attributes["activity"].Value,
+                            LastBuildStatus = xmlNode.Attributes["lastBuildStatus"].Value,
+                            LastBuildLabel = xmlNode.Attributes["lastBuildLabel"].Value,
+                            LastBuildTimeDateTime = lastBuildTimeDateTime,
+                            WebUrl = xmlNode.Attributes["webUrl"].Value
+                        };
                     Pipelines.Add(pipeline);
                 }
             }
