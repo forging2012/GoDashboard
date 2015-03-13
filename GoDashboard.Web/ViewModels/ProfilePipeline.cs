@@ -1,4 +1,4 @@
-﻿namespace GoDashboard.Web.ViewModels
+namespace GoDashboard.Web.ViewModels
 {
     public class ProfilePipeline
     {

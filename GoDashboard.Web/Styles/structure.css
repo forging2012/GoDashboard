@@ -37,7 +37,6 @@ body{
 	font-size:75%;
     font-family: Arial, Helvetica, sans-serif;
     background:#261144;
-    /*background: -moz-linear-gradient(center bottom , #9dbad8 0%, #562e91 100%) no-repeat;*/
     color: #333;
 }
 
@@ -608,8 +607,7 @@ text-transform: uppercase;
 /*
  * Global Pass/Fail colors
  */
-.Passed{
-    /*background-image: url(../images/g9/backgrounds/bg_status_gradient.png?2.1.0);*/
+.passed{
     background-repeat: repeat-x;
     background-image: -moz-linear-gradient(center top , #d6f8d6, #57A957);
     background-image: -webkit-gradient(linear, center top, center bottom, from(#d6f8d6), to(#57A957));
@@ -619,13 +617,12 @@ text-transform: uppercase;
     text-shadow: 0 0 1px #FFF;
 }
 
-.Passed a, .Building a
+.passed a, .building a
 {
     color: #000;
 }
 
-.Building.statusbox{
-    /*background-image: url(../images/g9/backgrounds/bg_status_gradient.png?2.1.0);*/
+.building.statusbox{
     background-repeat: repeat-x !important;
     background-image: -moz-linear-gradient(center top , #F2F280, #CFCF00) !important;
     background-image: -webkit-gradient(linear, center top, center bottom, from(#F2F280), to(#CFCF00)) !important;
@@ -634,8 +631,7 @@ text-transform: uppercase;
     color: #000;
 }
 
-.Failed{
-    /*background-image: url(../images/g9/backgrounds/bg_status_gradient.png?2.1.0);*/
+.failed{
     background-repeat: repeat-x;
     background-image: -moz-linear-gradient(center top , #EE5F5B, #C43C35);
     background-image: -webkit-gradient(linear, center top, center bottom, from(#EE5F5B), to(#C43C35));
@@ -645,13 +641,12 @@ text-transform: uppercase;
     text-shadow: 0 0 2px #000;
 }
 
-.Failed a
+.failed a
 {
     color: #FFF;
 }
 
-.Grey{
-    /*background-image: url(../images/g9/backgrounds/bg_status_gradient.png?2.1.0);*/
+.grey{
     background-repeat: repeat-x;
     background-image: -moz-linear-gradient(center top , #AAA, #555);
     background-image: -webkit-gradient(linear, center top, center bottom, from(#AAA), to(#555));
@@ -661,13 +656,12 @@ text-transform: uppercase;
     text-shadow: 0 0 2px #000;
 }
 
-.Grey a
+.grey a
 {
     color: #FFF;
 }
 
-.Failing {
-    /*background-image: url(../images/g9/backgrounds/bg_status_diagonal.png?2.1.0);*/
+.failing {
     background-repeat: repeat-x;
     background-image: -moz-linear-gradient(center top , #EE5F5B, #C43C35);
     background-image: -webkit-gradient(linear, center top, center bottom, from(#EE5F5B), to(#C43C35));
@@ -678,16 +672,13 @@ text-transform: uppercase;
     background: url(../images/g9/backgrounds/bg_state_unknown.png?2.1.0) no-repeat right;
 }
 
-.Building,
-.Active{
-    /*background-image: url(../images/g9/backgrounds/bg_status_diagonal.png?2.1.0);*/
+.building,
+.active{
     background-repeat: repeat-x;
-    /*background-color: #ffc11b;*/
     background-position: bottom left;
 }
 
-.Cancelled {
-    /*background-image: url(../images/g9/backgrounds/bg_status_diagonal.png?2.1.0);*/
+.cancelled {
     background-repeat: repeat-x;
     background-color: #DD8833;
     background-position: bottom left;
@@ -717,7 +708,7 @@ text-transform: uppercase;
 
 /* don't center content for tables */
 
-tr.Cancelled td {
+tr.cancelled td {
     text-align: left;
 }
 

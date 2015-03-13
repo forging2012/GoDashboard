@@ -1,4 +1,4 @@
-﻿using GoDashboard.Web.Modules.Interfaces;
+﻿using GoDashboard.Web.Modules;
 
 namespace GoDashboard.Web.Tests.Fakes
 {

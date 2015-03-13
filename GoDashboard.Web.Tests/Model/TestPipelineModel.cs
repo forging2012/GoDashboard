@@ -1,5 +1,4 @@
 ﻿using System;
-
 using GoDashboard.Web.Models;
 using NUnit.Framework;
 

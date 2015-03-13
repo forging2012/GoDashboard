@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Web.Mvc;
 using GoDashboard.Web.Controllers;
 using GoDashboard.Web.Modules;
-using GoDashboard.Web.Modules.Interfaces;
 using GoDashboard.Web.Tests.Fakes;
 using GoDashboard.Web.ViewModels;
 using NUnit.Framework;

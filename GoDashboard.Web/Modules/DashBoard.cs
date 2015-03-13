@@ -8,7 +8,6 @@ using System.Text;
 using System.Xml;
 using GoDashboard.Web.Construction;
 using GoDashboard.Web.Models;
-using GoDashboard.Web.Modules.Interfaces;
 using GoDashboard.Web.ViewModels;
 
 namespace GoDashboard.Web.Modules

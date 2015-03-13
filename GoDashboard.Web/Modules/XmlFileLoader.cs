@@ -1,5 +1,4 @@
 ﻿using System.Xml.Linq;
-using GoDashboard.Web.Modules.Interfaces;
 
 namespace GoDashboard.Web.Modules
 {

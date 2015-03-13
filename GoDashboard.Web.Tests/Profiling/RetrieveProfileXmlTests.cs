@@ -1,6 +1,5 @@
 ﻿using System.Xml.Linq;
 using GoDashboard.Web.Modules;
-using GoDashboard.Web.Modules.Interfaces;
 using GoDashboard.Web.Tests.Fakes;
 using NUnit.Framework;
 
@@ -12,13 +11,13 @@ namespace GoDashboard.Web.Tests.Profiling
         [Test]
         public void Should_Load_Xml_For_Name()
         {
-            var profilesXml = "<?xml version=\"1.0\" encoding=\"utf-8\" ?><Profiles><Profile name=\"test\">"
-                                + "<WhiteList>"
-                                + "<Pipeline>Pipeline1</Pipeline>"
-                                + "<Pipeline>Pipeline2</Pipeline>"
-                                + "</WhiteList>"
-                                + "<Statuses>"
-                                + "<Failed/></Statuses></Profile></Profiles>";
+            const string profilesXml = "<?xml version=\"1.0\" encoding=\"utf-8\" ?><Profiles><Profile name=\"test\">"
+                                       + "<WhiteList>"
+                                       + "<Pipeline>Pipeline1</Pipeline>"
+                                       + "<Pipeline>Pipeline2</Pipeline>"
+                                       + "</WhiteList>"
+                                       + "<Statuses>"
+                                       + "<Failed/></Statuses></Profile></Profiles>";
 
             IFileLoader fakeFileLoader = new FakeFileLoader(profilesXml);
 
@@ -38,14 +37,14 @@ namespace GoDashboard.Web.Tests.Profiling
         [Test]
         public void Should_Load_Xml_For_Name_without_caring_about_case()
         {
-            var profilesXml = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>"
-                                + "<Profiles><Profile name=\"test\">"
-                                + "<WhiteList>"
-                                + "<Pipeline>Pipeline1</Pipeline>"
-                                + "<Pipeline>Pipeline2</Pipeline>"
-                                + "</WhiteList>"
-                                + "<Statuses>"
-                                + "<Failed/></Statuses></Profile></Profiles>";
+            const string profilesXml = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>"
+                                       + "<Profiles><Profile name=\"test\">"
+                                       + "<WhiteList>"
+                                       + "<Pipeline>Pipeline1</Pipeline>"
+                                       + "<Pipeline>Pipeline2</Pipeline>"
+                                       + "</WhiteList>"
+                                       + "<Statuses>"
+                                       + "<Failed/></Statuses></Profile></Profiles>";
 
             IFileLoader fakeFileLoader = new FakeFileLoader(profilesXml);
 
@@ -65,13 +64,13 @@ namespace GoDashboard.Web.Tests.Profiling
         [Test]
         public void Should_Return_Null_for_NonExistant_Profile()
         {
-            var profilesXml = "<?xml version=\"1.0\" encoding=\"utf-8\" ?><Profiles><Profile name=\"test\">"
-                              + "<WhiteList>"
-                              + "<Pipeline>Pipeline1</Pipeline>"
-                              + "<Pipeline>Pipeline2</Pipeline>"
-                              + "</WhiteList>"
-                              + "<Statuses><Failed/></Statuses>"
-                              + "</Profile></Profiles>";
+            const string profilesXml = "<?xml version=\"1.0\" encoding=\"utf-8\" ?><Profiles><Profile name=\"test\">"
+                                       + "<WhiteList>"
+                                       + "<Pipeline>Pipeline1</Pipeline>"
+                                       + "<Pipeline>Pipeline2</Pipeline>"
+                                       + "</WhiteList>"
+                                       + "<Statuses><Failed/></Statuses>"
+                                       + "</Profile></Profiles>";
 
             IFileLoader fakeFileLoader = new FakeFileLoader(profilesXml);
 

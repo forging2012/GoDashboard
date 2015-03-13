@@ -1,6 +1,6 @@
 ﻿using System.Xml.Linq;
 
-namespace GoDashboard.Web.Modules.Interfaces
+namespace GoDashboard.Web.Controllers
 {
     public interface IXmlProfileRetriever
     {

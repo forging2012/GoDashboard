@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using System.Xml.Linq;
-using GoDashboard.Web.Modules.Interfaces;
+using GoDashboard.Web.Controllers;
 
 namespace GoDashboard.Web.Modules
 {
@@ -18,10 +18,10 @@ namespace GoDashboard.Web.Modules
             var profilesXmlFileContent = _fileLoader.Load();
             var profilesXml = XElement.Parse(profilesXmlFileContent);
             var profiles = profilesXml.Elements("Profile").Where(x =>
-                {
-                    var xAttribute = x.Attribute("name");
-                    return xAttribute != null && xAttribute.Value.ToLower() == profileName.ToLower();
-                });
+            {
+                var xAttribute = x.Attribute("name");
+                return xAttribute != null && xAttribute.Value.ToLower() == profileName.ToLower();
+            });
             return profiles.FirstOrDefault();
         }
     }

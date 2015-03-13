@@ -1,0 +1,25 @@
+﻿@model GoDashboard.Web.ViewModels.IndexViewModel
+
+@if (!Model.Groups.Any())
+{
+    foreach (var displayablePipeline in Model.Pipelines)
+    {
+        Html.RenderPartial("Pipeline", displayablePipeline);
+    }
+}
+else
+{
+    foreach (var groupedDisplayablePipeline in Model.Groups.Where(groupedDisplayablePipeline => groupedDisplayablePipeline.Pipelines.Any()))
+    {
+        <h2 class="group">
+            @if (groupedDisplayablePipeline.ShowName)
+            {
+                @groupedDisplayablePipeline.Name
+            }
+        </h2>
+        foreach (var displayablePipeline in groupedDisplayablePipeline.Pipelines)
+        {
+            Html.RenderPartial("Pipeline", displayablePipeline);
+        }
+    }
+}

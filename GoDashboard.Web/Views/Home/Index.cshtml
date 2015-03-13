@@ -1,0 +1,10 @@
+﻿@model GoDashboard.Web.ViewModels.IndexViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    Html.RenderPartial("Groups", Model);
+    Html.RenderPartial("PassedCount", Model);
+}

@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Xml.Linq;
+using GoDashboard.Web.Controllers;
 using GoDashboard.Web.Models;
 using GoDashboard.Web.ViewModels;
 
@@ -40,7 +41,12 @@ namespace GoDashboard.Web.Modules
 
                     var profilePipelines = LoadProfilePipelines(groupPipelineNodes);
 
-                    var groupedPipeline = new GroupedPipeline { Name = groupName, ProfilePipelines = profilePipelines, ShowName = showName };
+                    var groupedPipeline = new GroupedPipeline
+                        {
+                            Name = groupName,
+                            ProfilePipelines = profilePipelines,
+                            ShowName = showName
+                        };
                     profile.PipelineGroups.Add(groupedPipeline);
                 }
             }
@@ -72,7 +78,9 @@ namespace GoDashboard.Web.Modules
             profile.Statuses = statusList;
 
             bool showPassedCount;
-            bool.TryParse((profilesXml.Element("ShowPassedCount") ?? XElement.Parse("<ShowPassedCount>false</ShowPassedCount>")).Value, out showPassedCount);
+            bool.TryParse(
+                (profilesXml.Element("ShowPassedCount") ?? XElement.Parse("<ShowPassedCount>false</ShowPassedCount>"))
+                    .Value, out showPassedCount);
 
             profile.ShowPassedCount = showPassedCount;
 

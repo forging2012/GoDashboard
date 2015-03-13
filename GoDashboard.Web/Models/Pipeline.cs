@@ -1,8 +1,9 @@
-﻿using System;
-using System.Globalization;
-
 namespace GoDashboard.Web.Models
 {
+    using System;
+    using System.Globalization;
+
+
     public class Pipeline
     {
         public string Name { get; set; }
@@ -23,7 +24,8 @@ namespace GoDashboard.Web.Models
                 return lastBuildLabel;
             }
         }
-        public string LastBuildTime {
+        public string LastBuildTime
+        {
             get
             {
                 return LastBuildTimeDateTime.ToString(CultureInfo.InvariantCulture);

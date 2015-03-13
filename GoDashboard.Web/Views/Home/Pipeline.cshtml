@@ -1,0 +1,28 @@
+﻿@model GoDashboard.Web.ViewModels.DisplayablePipeline
+
+<div class="@Model.Status statusbox" id="@Model.SanitizedName">
+    <div class="innercontent">
+        <h1 title="@Model.Name" @Html.Raw(Model.NameClass)>
+          <a href="@Model.Url" target="_Blank">
+              @Model.ProcessedDisplayName
+          </a>
+        </h1>
+
+        <div class="pipelinesmini" style="width:@Model.PipelineStageWidth">
+            @foreach (var stage in Model.Stages)
+            {
+                <div class="smallbox @stage.Status @stage.Activity" title="@stage.Name"></div>
+            }
+        </div>
+
+        @if (!Model.HideBuildInfo)
+        {
+            <div class="buildlabel">
+                <span class="lastbuildlabel">@Model.ProcessedLastBuildLabel</span>
+                <div class="cl"></div>
+                <span class="lastbuildtime @Model.FixOverdue}">@Model.LastBuildTime.ToString("ddd d HH:mm")</span>
+            </div> 
+        }
+    </div>
+</div>
+<div class="inbetweeny" id="@Model.Name.Replace(".", "")IBT"></div>
